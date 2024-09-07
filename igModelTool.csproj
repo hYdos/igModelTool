@@ -24,7 +24,7 @@
 
     <ItemGroup>
       <Reference Include="igLibrary">
-        <HintPath>..\..\..\..\Programs\igCauldron3-closedbeta-0.12\igLibrary.dll</HintPath>
+        <HintPath>igLibEnv/igLibrary.dll</HintPath>
       </Reference>
     </ItemGroup>
 
