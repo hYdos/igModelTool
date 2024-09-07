@@ -271,6 +271,7 @@ public enum kTfbSpyroTag_ToyType
 	kTfbSpyroTag_ToyType_Character_DriverStealthElf = 3415,
 	kTfbSpyroTag_ToyType_Character_DriverTerrafin = 3416,
 	kTfbSpyroTag_ToyType_Character_DriverRollerBrawl = 3417,
+	kTfbSpyroTag_ToyType_Character_FunkyKong = 3418,
 	kTfbSpyroTag_ToyType_Character_DriverPopFizz = 3420,
 	kTfbSpyroTag_ToyType_Character_DriverEruptor = 3421,
 	kTfbSpyroTag_ToyType_Character_DriverGillGrunt = 3422,
