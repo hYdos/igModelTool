@@ -32,7 +32,7 @@ jobs:
 
     - name: Archive build artifacts
       if: success()
-      run: zip -r igModelTool.zip artifacts
+      run: zip -r igModelTool.zip . -i artifacts
 
     - name: Publish build artifacts
       if: success()
