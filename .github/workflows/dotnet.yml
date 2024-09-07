@@ -37,13 +37,47 @@ jobs:
     - name: Publish build artifacts
       if: success()
       run: dotnet publish -c Release -o ./artifacts
-
+      
   release:
     needs: build
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     
+    - name: Check for Existing Release
+      id: check_release
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const tag = 'v1.0.0'; // Replace with your tag/version
+          try {
+            const release = await github.rest.repos.getReleaseByTag({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag
+            });
+            core.setOutput('release_exists', 'true');
+            core.setOutput('release_id', release.data.id);
+          } catch (error) {
+            if (error.status === 404) {
+              core.setOutput('release_exists', 'false');
+            } else {
+              throw error;
+            }
+          }
+
+    - name: Delete Existing Release
+      if: steps.check_release.outputs.release_exists == 'true'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const release_id = ${{ steps.check_release.outputs.release_id }};
+          await github.rest.repos.deleteRelease({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            release_id
+          });
+
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
