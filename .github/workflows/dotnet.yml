@@ -30,13 +30,13 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
 
-    - name: Publish build artifacts
-      if: success()
-      run: dotnet publish -c Release -o ./artifacts
-
     - name: Archive build artifacts
       if: success()
       run: zip -r igModelTool.zip ./artifacts
+
+    - name: Publish build artifacts
+      if: success()
+      run: dotnet publish -c Release -o ./artifacts
 
   release:
     needs: build
