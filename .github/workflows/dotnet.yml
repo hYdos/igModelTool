@@ -34,3 +34,17 @@ jobs:
       if: success()
       run: dotnet publish -c Release -o ./artifacts
     
+    - name: Publish build artifacts
+      if: success()
+      run: dotnet publish -c Release -o ./artifacts
+
+    - name: Archive build artifacts
+      if: success()
+      run: zip -r igModelTool.zip ./artifacts/*
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: igModelTool
+        path: igModelTool.zip
+    
