@@ -1,0 +1,37 @@
+namespace igLibrary.Gen.MetaEnum;
+
+public enum EGroups
+{
+	eG_All,
+	eG_SinglePlayerStory,
+	eG_LocalCoopStory,
+	eG_OnlineCoopStory,
+	eG_SinglePlayerRacing,
+	eG_LocalCoopRacing,
+	eG_OnlineCoopRacing,
+	eG_OnlinePublicRacing,
+	eG_AllOnline,
+	eG_AllOffline,
+	eG_OnlinePlayAllowed,
+	eG_OnlinePlayRestricted,
+	eG_StoryCompleted,
+	eG_PhysicalPortal,
+	eG_NoPortal,
+	eG_CollectionSizeLowerQuintile,
+	eG_CollectionSizeLowerMiddleQuintile,
+	eG_CollectionSizeMiddleQuintile,
+	eG_CollectionSizeUpperMiddleQuintile,
+	eG_CollectionSizeUpperQuintile,
+	eG_ReturningPlayer,
+	eG_NewPlayer,
+	eG_ToysOwnedOutsideStarterPack,
+	eG_DarkEditionStarterPack,
+	eG_StarterPack,
+	eG_BothStarterPacks,
+	eG_InstantsOnly,
+	eG_NoStarterPackOrInstantToys,
+	eG_LandRace,
+	eG_SeaRace,
+	eG_AirRace,
+	eG_NumGroups
+}

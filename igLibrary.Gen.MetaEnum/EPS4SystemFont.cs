@@ -1,0 +1,9 @@
+namespace igLibrary.Gen.MetaEnum;
+
+public enum EPS4SystemFont
+{
+	ePS4SF_KakuGothic_EuropeanArabicJapanese,
+	ePS4SF_SansSerif_EuropeanArabicJapanese,
+	ePS4SF_KakuGothic_Bold_EuropeanArabicJapanese,
+	ePS4SF_SansSerif_Bold_EuropeanArabicJapanese
+}

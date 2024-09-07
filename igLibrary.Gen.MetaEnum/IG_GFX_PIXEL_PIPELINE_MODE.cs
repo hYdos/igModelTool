@@ -1,0 +1,7 @@
+namespace igLibrary.Gen.MetaEnum;
+
+public enum IG_GFX_PIXEL_PIPELINE_MODE
+{
+	IG_GFX_PIXEL_PIPELINE_MODE_DEFAULT = 0,
+	IG_GFX_PIXEL_PIPELINE_MODE_SHADER = 2
+}

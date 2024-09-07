@@ -1,0 +1,8 @@
+namespace igLibrary.Gen.MetaEnum;
+
+public enum IG_GFX_RENDER_MODE
+{
+	IG_GFX_RENDER_MODE_FILL,
+	IG_GFX_RENDER_MODE_LINES,
+	IG_GFX_RENDER_MODE_POINTS
+}

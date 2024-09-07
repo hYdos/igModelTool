@@ -1,0 +1,10 @@
+namespace igLibrary.Gen.MetaEnum;
+
+public enum ERacingPackId
+{
+	ERACINGPACKID_NONE = -1,
+	ERACINGPACKID_ONE,
+	ERACINGPACKID_TWO,
+	ERACINGPACKID_THREE,
+	ERACINGPACKID_MAX
+}

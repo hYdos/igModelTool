@@ -1,0 +1,9 @@
+namespace igLibrary.Gen.MetaEnum;
+
+public enum RENDER_TYPE
+{
+	RENDER_TYPE_OPAQUE,
+	RENDER_TYPE_ALPHATEST,
+	RENDER_TYPE_TRANSPARENT,
+	RENDER_TYPE_END
+}

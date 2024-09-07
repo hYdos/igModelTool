@@ -1,0 +1,8 @@
+namespace igLibrary.Gen.MetaEnum;
+
+public enum IG_GFX_TEXTURE_SOURCE
+{
+	IG_GFX_TEXTURE_SOURCE_IMAGE = 0,
+	IG_GFX_TEXTURE_SOURCE_VIDEO = 2,
+	IG_GFX_TEXTURE_SOURCE_BUFFER = 3
+}

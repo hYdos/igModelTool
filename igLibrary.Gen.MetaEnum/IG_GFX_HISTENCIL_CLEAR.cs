@@ -1,0 +1,7 @@
+namespace igLibrary.Gen.MetaEnum;
+
+public enum IG_GFX_HISTENCIL_CLEAR
+{
+	IG_GFX_HISTENCIL_CLEAR_CULL,
+	IG_GFX_HISTENCIL_CLEAR_PASS
+}

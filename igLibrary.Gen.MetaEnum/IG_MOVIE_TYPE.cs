@@ -1,0 +1,9 @@
+namespace igLibrary.Gen.MetaEnum;
+
+public enum IG_MOVIE_TYPE
+{
+	IG_MOVIE_TYPE_DEFAULT,
+	IG_MOVIE_TYPE_VIDEO,
+	IG_MOVIE_TYPE_AUDIO,
+	IG_MOVIE_TYPE_BOTH
+}

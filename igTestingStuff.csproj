@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <RootNamespace>CauldronModels</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="InputSimulator" Version="1.0.4" />
+      <PackageReference Include="Silk.NET.Assimp" Version="2.21.0" />
+      <PackageReference Include="Silk.NET.Core" Version="2.21.0" />
+      <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
+      <PackageReference Include="System.CommandLine.DragonFruit" Version="0.4.0-alpha.22272.1" />
+      <PackageReference Include="System.Reflection.Metadata" Version="6.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="bin\Debug\net6.0\ArkCore\EV_SkylandersSuperchargers.ark" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="igLibrary">
+        <HintPath>..\..\..\..\Programs\igCauldron3-closedbeta-0.12\igLibrary.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+</Project>

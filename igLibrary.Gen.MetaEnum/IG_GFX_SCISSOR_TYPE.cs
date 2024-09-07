@@ -1,0 +1,7 @@
+namespace igLibrary.Gen.MetaEnum;
+
+public enum IG_GFX_SCISSOR_TYPE
+{
+	IG_GFX_SCISSOR_TYPE_EQUALS_VIEWPORT,
+	IG_GFX_SCISSOR_TYPE_INDEPENDENT
+}

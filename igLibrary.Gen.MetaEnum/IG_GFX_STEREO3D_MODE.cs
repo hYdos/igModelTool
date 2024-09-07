@@ -1,0 +1,8 @@
+namespace igLibrary.Gen.MetaEnum;
+
+public enum IG_GFX_STEREO3D_MODE
+{
+	IG_GFX_STEREO3D_DISABLED,
+	IG_GFX_STEREO3D_ANAGLYPH,
+	IG_GFX_STEREO3D_HARDWARE
+}

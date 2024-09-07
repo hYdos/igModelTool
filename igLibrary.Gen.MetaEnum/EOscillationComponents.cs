@@ -1,0 +1,16 @@
+namespace igLibrary.Gen.MetaEnum;
+
+public enum EOscillationComponents
+{
+	eOC_GLOBAL,
+	eOC_BRANCH_1,
+	eOC_BRANCH_2,
+	eOC_LEAF_RIPPLE_1,
+	eOC_LEAF_TUMBLE_1,
+	eOC_LEAF_TWITCH_1,
+	eOC_LEAF_RIPPLE_2,
+	eOC_LEAF_TUMBLE_2,
+	eOC_LEAF_TWITCH_2,
+	eOC_FROND_RIPPLE,
+	eOC_NUM_COMPONENTS
+}

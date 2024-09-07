@@ -1,0 +1,15 @@
+namespace igLibrary.Gen.MetaEnum;
+
+public enum EObjectBoltType
+{
+	eOBT_INVALID,
+	eOBT_WORLD,
+	eOBT_ENTITY,
+	eOBT_GAME_ENTITY,
+	eOBT_STATIC_ENTITY,
+	eOBT_CUTSCENE_ENTITY,
+	eOBT_ACTOR_BOLT,
+	eOBT_MODEL,
+	eOBT_IGENTITY,
+	eOBT_COUNT
+}

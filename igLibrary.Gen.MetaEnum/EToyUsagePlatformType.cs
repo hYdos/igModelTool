@@ -1,0 +1,38 @@
+namespace igLibrary.Gen.MetaEnum;
+
+public enum EToyUsagePlatformType
+{
+	kPlatform_Unknown,
+	kPlatform_PC,
+	kPlatform_Xbox360,
+	kPlatform_XboxOne,
+	kPlatform_PS3,
+	kPlatform_PS4,
+	kPlatform_Wii,
+	kPlatform_WiiU,
+	kPlatform_LGTV,
+	kPlatform_iOS,
+	kPlatform_Android,
+	kPlatform_Win8Mobile,
+	kPlatform_3DS,
+	kPlatform_Platform13,
+	kPlatform_Platform14,
+	kPlatform_Platform15,
+	kPlatform_Platform16,
+	kPlatform_Platform17,
+	kPlatform_Platform18,
+	kPlatform_Platform19,
+	kPlatform_Platform20,
+	kPlatform_Platform21,
+	kPlatform_Platform22,
+	kPlatform_Platform23,
+	kPlatform_Platform24,
+	kPlatform_Platform25,
+	kPlatform_Platform26,
+	kPlatform_Platform27,
+	kPlatform_Platform28,
+	kPlatform_Platform29,
+	kPlatform_Platform30,
+	kPlatform_Platform31,
+	kPlatform_MaxPlatforms
+}
