@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("igTestingStuff")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d7afe798af6cf4d4b8c21cff8bb76a86038c859")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+746bb96d1315c674b08c1cf36767920ee8b08c5b")]
 [assembly: System.Reflection.AssemblyProductAttribute("igTestingStuff")]
 [assembly: System.Reflection.AssemblyTitleAttribute("igTestingStuff")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
