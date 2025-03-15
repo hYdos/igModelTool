@@ -1,4 +1,4 @@
-namespace igLibrary
+namespace CauldronModels.igLibrary.Gen.MetaObject
 {
 	public class CFullCharacterToyData : CToyData
 	{
@@ -7,6 +7,6 @@ namespace igLibrary
 		public System.Boolean _allowSmokeTestSwapAllHeroesXenon;
 		public System.Boolean _allowSmokeTestSwapAllHeroes;
 		public System.Boolean _featured;
-		public igLibrary.Gen.MetaEnum.ESkylanderType _skylanderType;
+		public global::CauldronModels.igLibrary.Gen.MetaEnum.ESkylanderType _skylanderType;
 	}
 }

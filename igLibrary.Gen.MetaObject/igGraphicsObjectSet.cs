@@ -2,7 +2,7 @@ using System.Runtime.InteropServices;
 using igLibrary.Core;
 using igLibrary.Graphics;
 
-namespace igLibrary.Gen.MetaObject;
+namespace CauldronModels.igLibrary.Gen.MetaObject;
 
 [StructLayout(LayoutKind.Auto, CharSet = CharSet.Auto)]
 public class igGraphicsObjectSet : igObject

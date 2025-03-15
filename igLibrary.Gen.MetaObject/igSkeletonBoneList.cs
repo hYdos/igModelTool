@@ -1,7 +1,7 @@
 using System.Runtime.InteropServices;
 using igLibrary.Core;
 
-namespace igLibrary.Gen.MetaObject;
+namespace CauldronModels.igLibrary.Gen.MetaObject;
 
 [StructLayout(LayoutKind.Auto, CharSet = CharSet.Auto)]
 public class igSkeletonBoneList : igTObjectList<igSkeletonBone>

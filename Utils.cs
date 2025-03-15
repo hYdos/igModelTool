@@ -6,27 +6,6 @@ namespace CauldronModels;
 public static class Utils {
     public static void WriteHalf(this StreamHelper streamHelper, Half data) => streamHelper.WriteHalf(data, streamHelper._endianness);
 
-    public static (T?, igObjectDirectory?) GetObjectAlias2<T>(this igHandle handle) where T : igObject {
-        if (handle._object != null)
-            return ((T)handle._object, default); // TODO: would require storing on the handle as well?
-        var directoriesByName = igSingleton<igObjectStreamManager>.Singleton._directoriesByName;
-        if (directoriesByName.TryGetValue(handle._namespace._hash, out var objectDirectoryList)) {
-            for (var index1 = 0; index1 < objectDirectoryList._count; ++index1) {
-                var igObjectDirectory = objectDirectoryList[index1];
-                if (!igObjectDirectory._useNameList)
-                    return (default, default);
-                for (var index2 = 0; index2 < igObjectDirectory._nameList!._count; ++index2) {
-                    if ((int)igObjectDirectory._nameList[index2]._hash != (int)handle._alias._hash) continue;
-                    handle._object = (igObjectDirectory._objectList[index2] as T)!;
-                    return ((T)handle._object, igObjectDirectory);
-                }
-            }
-        }
-
-        Logging.Warn("failed to load {0}.{1}", handle._namespace._string, handle._alias._string);
-        return (default, default);
-    }
-
     public static void WriteHalf(this StreamHelper streamHelper, Half data, StreamHelper.Endianness endianness) {
         streamHelper.WriteForEndianness(BitConverter.GetBytes(data), endianness);
     }
@@ -66,6 +45,45 @@ public static class Utils {
         return obj.FirstOrDefault(targetIgObj => targetIgObj.GetType() == targetType);
     }
 
+    public static igObjectDirectory NewIgz(string name) {
+        var defaultPool = igSingleton<igMemoryContext>.Singleton.GetMemoryPoolByName("Default")!;
+        var igz = new igObjectDirectory(name + ".igz") {
+            internalMemoryPool = defaultPool,
+            _useNameList = true,
+            _nameList = new igNameList { internalMemoryPool = defaultPool },
+            _type = igObjectDirectory.FileType.kIGZ,
+            _objectList = {
+                internalMemoryPool = defaultPool
+            }
+        };
+        return igz;
+    }
+
+    public static igArchive NewArchive(this igArchiveManager archiveManager, string path) {
+        if (archiveManager.TryGetArchive(path, out var archive))
+            return archive;
+        var igArchive = new igArchive {
+            _path = $"{path}",
+            _archiveHeader = new igArchive.Header {
+                _magicNumber = 0,
+                _version = 11U,
+                _tocSize = 0,
+                _numFiles = 0,
+                _sectorSize = 0x512,
+                _hashSearchDivider = 0xFFFFFFFF,
+                _hashSearchSlop = 0,
+                _numLargeFileBlocks = 0,
+                _numMediumFileBlocks = 0,
+                _numSmallFileBlocks = 0,
+                _nameTableOffset = 0,
+                _nameTableSize = 0,
+                _flags = 0
+            }
+        };
+        archiveManager._archiveList.Append(igArchive);
+        return igArchive;
+    }
+
     public static (short scaledX, short scaledY, short scaledZ, short scaleFactor) ScaleToShortBounds(float x, float y, float z) {
         // Find the maximum absolute value among the coordinates
         var maxCoord = Math.Max(Math.Max(Math.Abs(x), Math.Abs(y)), Math.Abs(z));
@@ -88,5 +106,17 @@ public static class Utils {
         var paddedArray = new byte[newLength];
         Array.Copy(inputArray, paddedArray, length);
         return paddedArray;
+    }
+
+    public static igStringStringHashTable NewStringHashTable(params (string key, string value)[] values) {
+        var defaultPool = igSingleton<igMemoryContext>.Singleton.GetMemoryPoolByName("Default")!;
+        var table = new igStringStringHashTable {
+            internalMemoryPool = defaultPool,
+            _keys = new igMemory<string>(),
+            _values = new igMemory<string>()
+        };
+        
+        foreach (var (key, value) in values) table.Add(key, value);
+        return table;
     }
 }

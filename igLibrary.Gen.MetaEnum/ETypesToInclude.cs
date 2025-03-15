@@ -1,4 +1,4 @@
-namespace igLibrary.Gen.MetaEnum;
+namespace CauldronModels.igLibrary.Gen.MetaEnum;
 
 public enum ETypesToInclude
 {

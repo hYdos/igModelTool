@@ -2,7 +2,7 @@ using System.Runtime.InteropServices;
 using igLibrary.Core;
 using igLibrary.Math;
 
-namespace igLibrary.Gen.MetaObject;
+namespace CauldronModels.igLibrary.Gen.MetaObject;
 
 [StructLayout(LayoutKind.Auto, CharSet = CharSet.Auto)]
 public class igSkeletonBone : igNamedObject

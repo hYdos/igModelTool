@@ -1,6 +1,8 @@
-namespace igLibrary
+using igLibrary.Core;
+
+namespace CauldronModels.igLibrary.Gen.MetaObject
 {
-	public class CVariantIdentifierList : igLibrary.Core.igTObjectList<CVariantIdentifier>
+	public class CVariantIdentifierList : igTObjectList<CVariantIdentifier>
 	{
 	}
 }

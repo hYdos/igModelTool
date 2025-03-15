@@ -1,7 +1,7 @@
 using System.Numerics;
 using Silk.NET.Assimp;
 
-namespace CauldronModels;
+namespace CauldronModels.api.model;
 
 public class Vertex {
     public const int MaxBoneInfluence = 4;
@@ -31,8 +31,8 @@ public class CompiledMesh {
     public readonly List<TextureReference> textures;
 
     public CompiledMesh(List<Vertex> buildVertices, List<uint> buildIndices, List<TextureReference> textures) {
-        this.vertices = buildVertices;
-        this.indices = buildIndices;
+        vertices = buildVertices;
+        indices = buildIndices;
         this.textures = textures;
     }
 }

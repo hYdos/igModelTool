@@ -1,0 +1,27 @@
+using System.Runtime.InteropServices;
+
+namespace CauldronModels.igLibrary.Gen.igCompoundMetaField;
+
+[StructLayout(3)]
+public struct igVertexElementMetaField
+{
+	public byte _type;
+
+	public byte _stream;
+
+	public byte _mapToElement;
+
+	public byte _count;
+
+	public byte _usage;
+
+	public byte _usageIndex;
+
+	public byte _packDataOffset;
+
+	public byte _packTypeAndFracHint;
+
+	public ushort _offset;
+
+	public ushort _freq;
+}

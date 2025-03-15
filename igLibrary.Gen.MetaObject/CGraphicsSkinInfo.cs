@@ -1,10 +1,9 @@
 using System.Runtime.InteropServices;
 using igLibrary.Core;
-using igLibrary.Gen.MetaObject;
 using igLibrary.Math;
 using igLibrary.Render;
 
-namespace igLibrary.Gen.MetaObjectw;
+namespace CauldronModels.igLibrary.Gen.MetaObject;
 
 [StructLayout(LayoutKind.Auto, CharSet = CharSet.Auto)]
 public class CGraphicsSkinInfo : igInfo

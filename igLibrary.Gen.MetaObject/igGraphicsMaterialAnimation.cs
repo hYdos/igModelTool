@@ -1,9 +1,9 @@
 using System.Runtime.InteropServices;
+using CauldronModels.igLibrary.Gen.MetaEnum;
 using igLibrary.Core;
-using igLibrary.Gen.MetaEnum;
 using igLibrary.Sg;
 
-namespace igLibrary.Gen.MetaObject;
+namespace CauldronModels.igLibrary.Gen.MetaObject;
 
 [StructLayout(LayoutKind.Auto, CharSet = CharSet.Auto)]
 public class igGraphicsMaterialAnimation : igObject

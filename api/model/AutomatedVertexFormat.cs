@@ -3,7 +3,7 @@ using igLibrary;
 using igLibrary.Core;
 using igLibrary.Gfx;
 
-namespace CauldronModels.api;
+namespace CauldronModels.api.model;
 
 /// <summary>
 /// High Level abstraction of VV Alchemy Vertex Format related logic

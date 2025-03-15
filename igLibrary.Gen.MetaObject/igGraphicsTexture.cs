@@ -3,7 +3,7 @@ using igLibrary.Core;
 using igLibrary.Gfx;
 using igLibrary.Graphics;
 
-namespace igLibrary.Gen.MetaObject;
+namespace CauldronModels.igLibrary.Gen.MetaObject;
 
 [StructLayout(LayoutKind.Auto, CharSet = CharSet.Auto)]
 public class igGraphicsTexture : igGraphicsObject
