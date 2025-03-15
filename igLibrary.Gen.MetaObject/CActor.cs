@@ -1,4 +1,5 @@
-using CauldronModels.igLibrary.Gen.igCompoundMetaField;
+using CauldronModels.igLibrary.Gen.igMetaField;
+using igLibrary;
 using igLibrary.Core;
 using igLibrary.Math;
 
@@ -24,7 +25,7 @@ public class CActor : CPhysicalEntity
 
 	public igVec2f _currentMoveStickDirection;
 
-	public CTransformMetaField _cameraRelativeMovementTransform;
+	public CTransform _cameraRelativeMovementTransform;
 
 	public float _heroShadowFade;
 
@@ -34,13 +35,13 @@ public class CActor : CPhysicalEntity
 
 	public uint mDeathTime;
 
-	public global::igLibrary.Core.igCompoundMetaField mLastHitEnt;
+	public CEntityID mLastHitEnt;
 
 	public float mLastHitEntTime;
 
 	public float mLastAttackedTime;
 
-	public global::igLibrary.Core.igCompoundMetaField mLastAttackedBy;
+	public CEntityID mLastAttackedBy;
 
 	public CCombatTargetDataListList _combatTargets;
 

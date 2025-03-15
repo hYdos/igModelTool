@@ -1,7 +1,7 @@
 using System.Runtime.InteropServices;
 using CauldronModels.igLibrary.Gen.MetaObject;
 
-namespace CauldronModels.igLibrary.Gen.igCompoundMetaField;
+namespace CauldronModels.igLibrary.Gen.igMetaField;
 
 [StructLayout(3)]
 public struct CBoltedModelMetaField

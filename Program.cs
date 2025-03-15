@@ -1,6 +1,7 @@
-﻿using CauldronModels.api;
+﻿using System.Reflection;
+using CauldronModels.api;
 using CauldronModels.api.model;
-using CauldronModels.igLibrary.Gen.igCompoundMetaField;
+using CauldronModels.igLibrary.Gen.igMetaField;
 using CauldronModels.igLibrary.Gen.MetaEnum;
 using CauldronModels.igLibrary.Gen.MetaObject;
 using igLibrary;
@@ -19,6 +20,7 @@ using igGraphicsVertexBuffer = igLibrary.Graphics.igGraphicsVertexBuffer;
 using igIndexBuffer = igLibrary.Gfx.igIndexBuffer;
 using igIndexFormat = igLibrary.Gfx.igIndexFormat;
 using igVertexBuffer = igLibrary.Gfx.igVertexBuffer;
+using Type = CauldronModels.igLibrary.Gen.MetaEnum.Type;
 
 namespace CauldronModels;
 
@@ -44,7 +46,10 @@ internal static class Program {
             platform
         );
 
+        // var CEntityIDMetaField = System.Type.GetType("igLibrary.Gen.CompoundField.CEntityIDMetaField", "ArkGeneratedTypes");
+
         Console.WriteLine("Loading Model");
+        // Assembly.GetAssembly()
         var replacementModel = new Model(replacementModelPath);
 
         Console.WriteLine("Adding Skylander");
@@ -147,6 +152,15 @@ internal static class Program {
                 oldActorData = (CActorData)baseCharData._objectList[i];
             }
         }
+
+        var deepCopyComponentData = new igComponentDataTable
+        {
+            internalMemoryPool = defaultPool
+        };
+        foreach (var (key, value) in (igComponentDataTable)oldActorData._componentData)
+        {
+            deepCopyComponentData.Add(key,value);
+        }
         
         var behaviours = skylanderPkg.NewIgz(AlchemyPkg.ObjectType.graphdata_behavior, $"behaviors/skylanders/{name}/{name}");
         var combat = skylanderPkg.NewIgz(AlchemyPkg.ObjectType.graphdata_behavior, $"behavior_events/skylanders/{name}_combat");
@@ -162,7 +176,7 @@ internal static class Program {
         }, true);
         var cActorData = new CActorData {
             internalMemoryPool = defaultPool,
-            _componentData = oldActorData._componentData,
+            _componentData = deepCopyComponentData,
             _scale = 1,
             _entityFlags = oldActorData._entityFlags,
             _actionEntityFlags = oldActorData._actionEntityFlags,
@@ -235,7 +249,7 @@ internal static class Program {
             _min = new igVec3f(-15, -15, -15),
             _max = new igVec3f(15, 15, 15),
             _flags = new byte[1],
-            _id = new global::igLibrary.Core.igCompoundMetaField {},
+            _id = new CEntityID(),
             _properties = 0b10000,
             _actToggleOn = true,
             _scaleSource = EScaleSource.eSS_Entity,
@@ -258,10 +272,10 @@ internal static class Program {
             _runtimeFlags = 0b1,
             _removeOnDeath = true,
             _nonPersistentBitfield = 0b1000,
-            _cameraRelativeMovementTransform = new CTransformMetaField(),
+            _cameraRelativeMovementTransform = new CTransform(),
             _heroShadowFade = 1,
-            mLastHitEnt = new global::igLibrary.Core.igCompoundMetaField {  },
-            mLastAttackedBy = new global::igLibrary.Core.igCompoundMetaField {  },
+            mLastHitEnt = new CEntityID {  },
+            mLastAttackedBy = new CEntityID {  },
             _combatTargets = new CCombatTargetDataListList {
                 internalMemoryPool = defaultPool,
                 _data = new igMemory<CCombatTargetDataList>()

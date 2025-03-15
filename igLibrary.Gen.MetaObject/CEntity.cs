@@ -1,5 +1,6 @@
-using CauldronModels.igLibrary.Gen.igCompoundMetaField;
+using CauldronModels.igLibrary.Gen.igMetaField;
 using CauldronModels.igLibrary.Gen.MetaEnum;
+using igLibrary;
 using igLibrary.Core;
 using igLibrary.Math;
 
@@ -21,7 +22,7 @@ public class CEntity : igEntity
 
 	public string _name;
 
-	public global::igLibrary.Core.igCompoundMetaField _id;
+	public CEntityID _id;
 
 	public ushort _properties;
 

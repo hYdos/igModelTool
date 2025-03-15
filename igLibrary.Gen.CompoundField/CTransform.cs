@@ -1,10 +1,11 @@
 using System.Runtime.InteropServices;
+using igLibrary.Core;
 using igLibrary.Math;
 
-namespace CauldronModels.igLibrary.Gen.igCompoundMetaField;
+namespace CauldronModels.igLibrary.Gen.igMetaField;
 
-[StructLayout(3)]
-public struct CTransformMetaField
+[igStruct]
+public struct CTransform
 {
 	public igVec3f _position;
 
